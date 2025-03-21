@@ -19,11 +19,13 @@ struct CardView: View {
                         Text("Hiking")
                             .fontWeight(.black)
                             .font(.system(size: 52)).foregroundStyle(LinearGradient(colors: [.customGrayLight, .customGrayMedium], startPoint: .top, endPoint: .bottom))
+                        
+                        Spacer()
+                        
                         Button {
                             print("the button was pressed")
                         } label: {
-                            Text("Button")
-                                
+                            CustomButtonView()
                         }
                         
                     }
