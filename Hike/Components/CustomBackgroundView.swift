@@ -13,20 +13,20 @@ struct CustomBackgroundView: View {
         ZStack {
             // MARK: - 3. Depth
             
-            Color("ColorGreenDark")
+            Color.customGreenDark
                 .clipShape(.rect(cornerRadius: 40))
                 .offset(y: 12)
             
             // MARK: - 2. Light
             
-            Color("ColorGreenLight")
+            Color.customGreenLight
                 .clipShape(.rect(cornerRadius: 40))
                 .offset(y: 3)
                 .opacity(0.85)
             
             // MARK: - 1. Surface
             
-            LinearGradient(colors: [Color("ColorGreenLight"), Color("ColorGreenMedium")], startPoint: .top, endPoint: .bottom)
+            LinearGradient(colors: [Color.customGreenLight, Color.customGreenMedium], startPoint: .top, endPoint: .bottom)
                 .clipShape(.rect(cornerRadius: 40))
         }
     }
