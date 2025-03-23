@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
+    // MARK: - Properties
+    
+    private let alternateAppIcons: [String] = ["AppIcon-Backpack", "AppIcon-Camera", "AppIcon-Campfire", "AppIcon-MagnifyingGlass", "AppIcon-Map", "AppIcon-Mushroom"]
+    
     var body: some View {
         List {
             Section {
@@ -54,6 +58,49 @@ struct SettingsView: View {
             .listRowSeparator(.hidden)
             
             // MARK: - Section Icons
+            
+            Section(header: Text("Alternate Icons"), footer: HStack{
+                Spacer()
+                Text("Copyright © All rights reserved. Version 1.0")
+                    .fontWeight(.light)
+                Spacer()
+            }
+                .padding(.vertical, 8)
+            ) {
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing : 12) {
+                        ForEach(alternateAppIcons.indices, id: \.self) { item in
+                            Button {
+                                print("Icon \(alternateAppIcons[item]) was Pressed!!!")
+                                UIApplication.shared.setAlternateIconName(alternateAppIcons[item]) { error in
+                                    if error != nil {
+                                        print("Failed request to update the app icon: \(String(describing: error?.localizedDescription))")
+                                    } else {
+                                        print("Successfully updated the app icon!")
+                                    }
+                                }
+                            } label: {
+                                Image(alternateAppIcons[item])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 80,height: 80)
+                                    .clipShape(.buttonBorder)
+                            }
+                            .buttonStyle(.borderless)
+                        }
+                    }
+                } // Scroll View
+                .padding(.top, 12)
+                Text("Choose your favorite app icon from the collection above.")
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+                    .font(.footnote)
+                    .padding(.bottom, 12)
+                    
+            } // SECTION
+            .listRowSeparator(.hidden)
             
             // MARK: - Section About
             Section(header: Text("ABOUT THE APP"), footer: HStack{
