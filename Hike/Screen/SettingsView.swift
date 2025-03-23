@@ -56,7 +56,25 @@ struct SettingsView: View {
             // MARK: - Section Icons
             
             // MARK: - Section About
-        }
+            Section(header: Text("ABOUT THE APP"), footer: HStack{
+                Spacer()
+                Text("Copyright © All rights reserved. Version 1.0")
+                    .fontWeight(.light)
+                Spacer()
+            }
+                .padding(.vertical, 8)
+            ) {
+                CustomListRowView(rowLabel: "Application", rowIcon: "apps.iphone", rowContent: "Hike", rowTintColor: .blue)
+                CustomListRowView(rowLabel: "Compatibility", rowIcon: "info.circle", rowContent: "iOS, iPadOS", rowTintColor: .red)
+                CustomListRowView(rowLabel: "Technology", rowIcon: "swift", rowContent: "Swift", rowTintColor: .orange)
+                CustomListRowView(rowLabel: "Version", rowIcon: "gear", rowContent: "1.0", rowTintColor: .purple)
+                CustomListRowView(rowLabel: "Developer", rowIcon: "ellipsis.curlybraces", rowContent: "Aran Apps", rowTintColor: .mint)
+                CustomListRowView(rowLabel: "Designer", rowIcon: "paintpalette", rowContent: "Robert", rowTintColor: .pink)
+                CustomListRowView(rowLabel: "Website", rowIcon: "globe", rowTintColor: .indigo , rowLinkLabel: "Github" , rowLinkDestination: "https://github.com/AranFononi")
+                    
+            } // SECTION
+            
+        } // List
     }
 }
 
