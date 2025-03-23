@@ -26,7 +26,7 @@ struct MotionAnimationView: View {
     }
     
     func randomSpeed() -> Double {
-        return Double.random(in: 0.05...1.0)
+        return Double.random(in: 0.05...0.9)
     }
     
     func randomDelay() -> Double {
@@ -50,6 +50,8 @@ struct MotionAnimationView: View {
             }
         }
         .frame(width: 256, height: 256)
+        .mask(Circle())
+        .drawingGroup()
     }
 }
 
