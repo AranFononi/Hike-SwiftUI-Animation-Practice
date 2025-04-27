@@ -38,4 +38,3 @@ The **Hike App** is a visually appealing SwiftUI app that introduces custom app 
 ## 📬 Contact  
 For any questions or collaborations, feel free to reach out:  
 - **Email**: [aranfononi@gmail.com](mailto:aranfononi@gmail.com)  
-- **LinkedIn**: [Aran Fononi](https://www.linkedin.com/in/aran-fononi-18182b265)  
